@@ -4,6 +4,7 @@ import { Component } from '@angular/core';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
+  standalone: false,
 })
 export class AppComponent {
   newFriend: string | null = null;
@@ -17,5 +18,11 @@ export class AppComponent {
     }
     this.people.push(this.newFriend);
     this.newFriend = null;
+  }
+
+  addFav(friend: string) {
+    if (this.favorite !== friend){
+      this.favorite = friend;
+    }
   }
 }
